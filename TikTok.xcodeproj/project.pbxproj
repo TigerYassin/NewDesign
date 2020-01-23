@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B2B73423DA2F04007ACB4A /* CellSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B2B73323DA2F04007ACB4A /* CellSelected.storyboard */; };
+		89B2B73623DA2F34007ACB4A /* CellSelectedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2B73523DA2F34007ACB4A /* CellSelectedController.swift */; };
 		89F8330023D953F4006A90D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F832FF23D953F4006A90D6 /* AppDelegate.swift */; };
 		89F8330223D953F4006A90D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8330123D953F4006A90D6 /* SceneDelegate.swift */; };
 		89F8330423D953F4006A90D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8330323D953F4006A90D6 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89B2B73323DA2F04007ACB4A /* CellSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CellSelected.storyboard; sourceTree = "<group>"; };
+		89B2B73523DA2F34007ACB4A /* CellSelectedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectedController.swift; sourceTree = "<group>"; };
 		89F832FC23D953F4006A90D6 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F832FF23D953F4006A90D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89F8330123D953F4006A90D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				89F8330A23D953F5006A90D6 /* LaunchScreen.storyboard */,
 				89F8330D23D953F5006A90D6 /* Info.plist */,
 				89F8331323D959C7006A90D6 /* TableViewCell.swift */,
+				89B2B73323DA2F04007ACB4A /* CellSelected.storyboard */,
+				89B2B73523DA2F34007ACB4A /* CellSelectedController.swift */,
 			);
 			path = TikTok;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 				89F8330C23D953F5006A90D6 /* LaunchScreen.storyboard in Resources */,
 				89F8330923D953F5006A90D6 /* Assets.xcassets in Resources */,
 				89F8330723D953F4006A90D6 /* Main.storyboard in Resources */,
+				89B2B73423DA2F04007ACB4A /* CellSelected.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +150,7 @@
 			files = (
 				89F8330423D953F4006A90D6 /* ViewController.swift in Sources */,
 				89F8331423D959C7006A90D6 /* TableViewCell.swift in Sources */,
+				89B2B73623DA2F34007ACB4A /* CellSelectedController.swift in Sources */,
 				89F8330023D953F4006A90D6 /* AppDelegate.swift in Sources */,
 				89F8330223D953F4006A90D6 /* SceneDelegate.swift in Sources */,
 			);
