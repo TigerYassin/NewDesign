@@ -97,6 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! TableViewCell
         cell.cellHeight = cellHeight
         cell.cellWidth = tableView.frame.size.width
+        cell.viewController = self
         cell.setUp()
         return cell
     }

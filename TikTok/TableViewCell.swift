@@ -34,23 +34,15 @@ class TableViewCell: UITableViewCell, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("printing the selection stuff")
-        
-        let vc = CellSelectedController()
-        //TODO this should be in the extension
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedVC = topController.presentingViewController {
-                topController = presentedVC
-                
-                topController.present(vc, animated: true, completion: nil)
-            }
-        }
-        
-        
+        let storyboard = UIStoryboard(name: "CellSelected", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CellSelected") as! CellSelectedController
+        vc.modalPresentationStyle = .fullScreen
+        viewController?.present(vc, animated: true, completion: nil)
     }
     
     var collectionView: UICollectionView?
     var identifier = "Cell"
+    var viewController: UIViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
