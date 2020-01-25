@@ -16,7 +16,7 @@ class CellSelectedController: UIViewController {
     let heartIcon = UIImageView(image: UIImage(named: "heartIcon"))
     let followUserIcon = UIImageView(image: UIImage(named: "followUserIcon"))
     let profileIcon = UIImageView(frame: CGRect.zero)
-    
+    let lowerText = UILabel(frame: CGRect.zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +88,25 @@ class CellSelectedController: UIViewController {
         followUserIcon.translatesAutoresizingMaskIntoConstraints = false
         followUserIcon.centerYAnchor.constraint(equalTo: profileIcon.bottomAnchor).isActive = true
         followUserIcon.centerXAnchor.constraint(equalTo: profileIcon.centerXAnchor).isActive = true
+        
+        
+        
+        
+        
+        /*
+            Lower text
+         */
+        
+        lowerText.text = "#foryoupage #healthyrecipes #healthyfood #fitness # fitnesstips #easymeals"
+        lowerText.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
+        view.addSubview(lowerText)
+        lowerText.font.withSize(13)
+        lowerText.numberOfLines = 0
+        lowerText.translatesAutoresizingMaskIntoConstraints = false
+        lowerText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 17.5).isActive = true
+        lowerText.widthAnchor.constraint(equalToConstant: 0.8 * view.frame.width).isActive = true
+        lowerText.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -0.2 * view.frame.height).isActive = true
+        lowerText.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         
     }
