@@ -14,6 +14,9 @@ class CellSelectedController: UIViewController {
     let backIcon = UIImageView(image: UIImage(named: "backIcon-white"))
     let shareIcon = UIImageView(image: UIImage(named: "shareIcon"))
     let heartIcon = UIImageView(image: UIImage(named: "heartIcon"))
+    let followUserIcon = UIImageView(image: UIImage(named: "followUserIcon"))
+    let profileIcon = UIImageView(frame: CGRect.zero)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,9 @@ class CellSelectedController: UIViewController {
         
         backIcon.translatesAutoresizingMaskIntoConstraints = false
         backIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 17.5).isActive = true
-        backIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 52.5).isActive = true
+        backIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.06 * view.frame.height).isActive = true
+        backIcon.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        backIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goBack(_:))))
         backIcon.isUserInteractionEnabled = true
@@ -54,15 +59,37 @@ class CellSelectedController: UIViewController {
         //share icon
         view.addSubview(shareIcon)
         shareIcon.translatesAutoresizingMaskIntoConstraints = false
-        shareIcon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -14).isActive = true
-        shareIcon.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -251).isActive = true
+        shareIcon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        shareIcon.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0.31 * view.frame.height).isActive = true
         
         
         //heart icon
         view.addSubview(heartIcon)
         heartIcon.translatesAutoresizingMaskIntoConstraints = false
-        heartIcon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -14).isActive = true
-        heartIcon.bottomAnchor.constraint(equalTo: shareIcon.topAnchor, constant: -15).isActive = true
+        heartIcon.centerXAnchor.constraint(equalTo: shareIcon.centerXAnchor).isActive = true
+        heartIcon.bottomAnchor.constraint(equalTo: shareIcon.topAnchor, constant: -20).isActive = true
+        
+        
+        //profile icon
+        profileIcon.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
+        
+        view.addSubview(profileIcon)
+        profileIcon.translatesAutoresizingMaskIntoConstraints = false
+        profileIcon.centerXAnchor.constraint(equalTo: heartIcon.centerXAnchor).isActive = true
+        profileIcon.bottomAnchor.constraint(equalTo: heartIcon.topAnchor, constant: -25).isActive = true
+        profileIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        profileIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        profileIcon.layer.cornerRadius = 20
+        
+        
+        //follow user icon
+        view.addSubview(followUserIcon)
+        followUserIcon.translatesAutoresizingMaskIntoConstraints = false
+        followUserIcon.centerYAnchor.constraint(equalTo: profileIcon.bottomAnchor).isActive = true
+        followUserIcon.centerXAnchor.constraint(equalTo: profileIcon.centerXAnchor).isActive = true
+        
+        
     }
     
     @objc func goBack(_ sender: UITapGestureRecognizer? = nil) {
