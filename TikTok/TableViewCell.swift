@@ -23,6 +23,13 @@ class TableViewCell: UITableViewCell, UICollectionViewDataSource {
     var cellHeight: CGFloat!
     var cellWidth: CGFloat!
     
+    /*
+        Elements
+    */
+    let hashTagIcon = UIImageView(image: UIImage(named: "HashTag"))
+    let upperText = UILabel(frame: CGRect.zero)
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
@@ -72,31 +79,30 @@ class TableViewCell: UITableViewCell, UICollectionViewDataSource {
         collectionView?.heightAnchor.constraint(equalToConstant: 0.68 * cellHeight).isActive = true
         collectionView?.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -0.07 * cellHeight).isActive = true
         
+        collectionView?.contentInset.left = frame.width * 0.0387
         
         //add icon
         addHashTag()
         addTopText()
     }
     
-    
     func addHashTag() {
-        let imageView = UIImageView(image: UIImage(named: "HashTag"))
-        addSubview(imageView)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 0.147 * cellHeight).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 0.147 * cellHeight).isActive = true
-        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 0.09 * cellHeight).isActive = true
+        addSubview(hashTagIcon)
+        let leftMargin = frame.width * 0.0387
+
+        hashTagIcon.translatesAutoresizingMaskIntoConstraints = false
+        hashTagIcon.leftAnchor.constraint(equalTo: leftAnchor, constant: leftMargin).isActive = true
+        hashTagIcon.widthAnchor.constraint(equalToConstant: 0.147 * cellHeight).isActive = true
+        hashTagIcon.heightAnchor.constraint(equalToConstant: 0.147 * cellHeight).isActive = true
+        hashTagIcon.topAnchor.constraint(equalTo: topAnchor, constant: 0.09 * cellHeight).isActive = true
     }
     
     func addTopText() {
-        let upperText = UILabel(frame: CGRect.zero)
         upperText.text = "supportaustraliasupport"
         upperText.textAlignment = .left
         addSubview(upperText)
         upperText.translatesAutoresizingMaskIntoConstraints = false
-        upperText.leftAnchor.constraint(equalTo: leftAnchor, constant: 37).isActive = true
+        upperText.leftAnchor.constraint(equalTo: hashTagIcon.rightAnchor, constant: 8).isActive = true
         upperText.widthAnchor.constraint(equalToConstant: 200).isActive = true
         upperText.bottomAnchor.constraint(equalTo: (collectionView?.topAnchor)!, constant: -8).isActive = true
         upperText.heightAnchor.constraint(equalToConstant: 16).isActive = true
